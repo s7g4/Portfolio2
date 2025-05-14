@@ -1,0 +1,49 @@
+body {
+    background: #000000;
+    color: #00ff00;
+    font-family: 'Source Code Pro', monospace;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#terminal {
+    width: 80%;
+    height: 80%;
+    background: #111111;
+    border: 2px solid #00ff00;
+    padding: 1em;
+    overflow-y: auto;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+#output {
+    white-space: pre-wrap;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.prompt {
+    color: #00ff00;
+    margin-right: 0.5em;
+}
+
+#terminal-input {
+    background: none;
+    border: none;
+    color: #00ff00;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
