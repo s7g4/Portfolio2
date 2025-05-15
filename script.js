@@ -74,10 +74,10 @@ Resume:
             return `
 Contact Me:
 -----------
-LinkedIn: https://linkedin.com
-GitHub: https://github.com
-Instagram: https://instagram.com
-Email:
+LinkedIn: <a href="https://linkedin.com" href="#" onclick="openLink(event, 'https://linkedin.com')" target="_blank" style="color:#00ff00; text-decoration: underline;">https://linkedin.com</a><br>
+GitHub: <a href="https://github.com" href="#" onclick="openLink(event, 'https://github.com')" target="_blank" style="color:#00ff00; text-decoration: underline;">https://github.com</a><br>
+Instagram: <a href="https://instagram.com" href="#" onclick="openLink(event, 'https://instagram.com')" target="_blank" style="color:#00ff00; text-decoration: underline;">https://instagram.com</a><br>
+Email: <a href="mailto:shauryagaur07@gmail.com" href="#" onclick="openLink(event, 'mailto:shauryagaur07@gmail.com')" target="_blank" style="color:#00ff00; text-decoration: underline;">shauryagaur07@gmail.com</a><br>
 `;
         },
         clear: () => {
@@ -119,18 +119,56 @@ Available Commands:
 -------------------
 home      - Go to the home page
 about     - Learn more about me
-work      - See my projects
 resume    - View my resume
 contact   - Get in touch with me
 clear     - Clear the terminal output
 date      - Show current date and time
 time      - Show current time
-skills    - List my technical skills
-projects  - Show detailed project descriptions
-exit      - Exit the terminal
+ls        - List items in work, project, or skills sets (usage: ls --work, ls --project, ls --skills)
+whoami    - Display user identity information
 help      - Show this help message
+exit      - Exit the terminal
 `;
         },
+        ls: (args) => {
+            if (args.length === 0) {
+                return 'Usage: ls --work | --project | --skills';
+            }
+            const subcommand = args[0];
+            switch (subcommand) {
+                case '--work':
+                    return `
+Work Items:
+-----------
+1. Project 1: AI Chatbot
+2. Portfolio Website
+3. E-commerce Platform
+`;
+                case '--project':
+                    return `
+Projects:
+---------
+1. AI Chatbot - An intelligent chatbot using NLP.
+2. Portfolio Website - Personal portfolio showcasing projects.
+3. E-commerce Platform - Full-stack e-commerce application.
+`;
+                case '--skills':
+                    return `
+Skills:
+-------
+- JavaScript, Python, Java
+- React, Node.js, Express
+- Machine Learning, AI
+- SQL, NoSQL Databases
+- Docker, Kubernetes
+`;
+                default:
+                    return 'Invalid subcommand. Usage: ls --work | --project | --skills';
+            }
+        },
+        whoami: () => {
+            return "I am Shaurya Gaur, a Full Stack Developer, AI/ML Specialist, and Technological Enthusiast.";
+        }
     };
 
     let exitConfirmation = false;
@@ -207,7 +245,25 @@ help      - Show this help message
         }
     });
 
+    // Helper function to open links and mailto in new tab or mail client
+    function openLink(event, url) {
+        event.preventDefault();
+        if (url.startsWith('mailto:')) {
+            window.location.href = url;
+        } else {
+            window.open(url, '_blank');
+        }
+    }
+
+    // Add event listener to open links with target="_blank" in a new tab on click
+    document.getElementById("output").addEventListener("click", (event) => {
+        const target = event.target;
+        if (target.tagName === "A" && target.target === "_blank") {
+            event.preventDefault();
+            window.open(target.href, "_blank");
+        }
+    });
+
     // Initial welcome message with typing effect
     typeText("Welcome to Shaurya's Terminal Portfolio!\nType 'help' to get started.\n");
 });
-
