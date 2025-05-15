@@ -261,13 +261,16 @@ Skills:
                 for (let char of text) {
                     if (stopTyping) break;
                     span.textContent += char;
-                    output.scrollTop = output.scrollHeight;
                     await new Promise(r => setTimeout(r, 10)); // typing delay
                 }
+                // Scroll once after finishing typing this text node
+                output.scrollTo({ top: output.scrollHeight, behavior: 'smooth' });
+    
             } else {
                 output.appendChild(node.cloneNode(true));
+                // Scroll after appending element node
+                output.scrollTo({ top: output.scrollHeight, behavior: 'smooth' });
             }
-            output.scrollTop = output.scrollHeight;
         }
     
         isTyping = false;
