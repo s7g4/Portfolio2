@@ -235,6 +235,11 @@ Skills:
         }
     };
 
+    window.addEventListener("touchstart", () => {
+        input.focus();
+    });
+    
+
     let exitConfirmation = false;
     let typingInterval = null;
 
@@ -290,7 +295,7 @@ Skills:
     const processCommand = (input) => {
         if (exitConfirmation) {
             if (input.toLowerCase() === 'y') {
-                output.innerHTML = 'Session terminated. Please reload to interact but you may lose your progress.';
+                output.innerHTML = 'Thank you for visiting my Portfolio Website.\n~Shaurya Gaur\nSession terminated. Please reload to interact but you may lose your progress.';
                 input.style.display = 'none';
                 return '';
             } else if (input.toLowerCase() === 'n') {
