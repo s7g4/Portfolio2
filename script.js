@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const output = document.getElementById("output");
     const input = document.getElementById("terminal-input");
 
+    // Command history array and index
+    const commandHistory = [];
+    let historyIndex = -1;
+
     // ASCII art for name and profession (moo art style)
     const mooArt = `
       __  __                 _                 
@@ -70,15 +74,15 @@ Resume:
 <a href="https://drive.google.com/file/d/1fPgOeEYSdQK4-_Qcl0Iu8RUpiIgEJea4/view?usp=sharings" target="_blank" style="color:#00ff00; text-decoration: underline;">View my resume here</a>
 `;
         },
-        contact: () => {
-            return `
-Contact Me:
------------
-LinkedIn: <a href="https://linkedin.com" href="#" onclick="openLink(event, 'https://linkedin.com')" target="_blank" style="color:#00ff00; text-decoration: underline;">https://linkedin.com</a><br>
-GitHub: <a href="https://github.com" href="#" onclick="openLink(event, 'https://github.com')" target="_blank" style="color:#00ff00; text-decoration: underline;">https://github.com</a><br>
-Instagram: <a href="https://instagram.com" href="#" onclick="openLink(event, 'https://instagram.com')" target="_blank" style="color:#00ff00; text-decoration: underline;">https://instagram.com</a><br>
-Email: <a href="mailto:shauryagaur07@gmail.com" href="#" onclick="openLink(event, 'mailto:shauryagaur07@gmail.com')" target="_blank" style="color:#00ff00; text-decoration: underline;">shauryagaur07@gmail.com</a><br>
-`;
+        contact: (args) => {
+            const nameArg = args.find(arg => arg.startsWith('--name='));
+            const msgArg = args.find(arg => arg.startsWith('--msg='));
+            if (!nameArg || !msgArg) {
+                return "Usage: contact --name=\"Your Name\" --msg=\"Your Message\"";
+            }
+            const name = nameArg.split('=')[1];
+            const msg = msgArg.split('=')[1];
+            return `Thank you, ${name}! Your message: "${msg}" has been received.`;
         },
         clear: () => {
             output.innerHTML = '';
@@ -102,13 +106,28 @@ Skills:
 `;
         },
         projects: () => {
-            return `
-Projects:
----------
-1. AI Chatbot - An intelligent chatbot using NLP.
-2. Portfolio Website - Personal portfolio showcasing projects.
-3. E-commerce Platform - Full-stack e-commerce application.
-`;
+            return fetch('projects.json')
+                .then(res => res.json())
+                .then(projects => {
+                    let projectList = "Projects:\n---------\n";
+                    projects.forEach(p => {
+                        projectList += `Title: ${p.title}\nDescription: ${p.description}\nTech: ${p.tech.join(', ')}\nGitHub: ${p.github}\n\n`;
+                    });
+                    return projectList;
+                })
+                .catch(() => "Failed to load projects.");
+        },
+        github: () => {
+            return fetch('https://api.github.com/users/s7g4/repos')
+                .then(res => res.json())
+                .then(repos => {
+                    let repoList = "GitHub Repositories:\n---------------------\n";
+                    repos.forEach(repo => {
+                        repoList += `Name: ${repo.name}\nDescription: ${repo.description || 'No description'}\nURL: ${repo.html_url}\n\n`;
+                    });
+                    return repoList;
+                })
+                .catch(() => "Failed to load GitHub repositories.");
         },
         exit: () => {
             return 'Are you sure you want to exit? (y/n)';
@@ -126,6 +145,7 @@ date      - Show current date and time
 time      - Show current time
 ls        - List items in work, project, or skills sets (usage: ls --work, ls --project, ls --skills)
 whoami    - Display user identity information
+github    - View GitHub repositories
 help      - Show this help message
 exit      - Exit the terminal
 `;
@@ -163,7 +183,7 @@ Skills:
 - Docker, Kubernetes
 `;
                 default:
-                    return 'Invalid subcommand. Usage: ls --work | --project | --skills';
+                    return 'Invalid subcommand. Usage: ls --work | --project | ls --skills';
             }
         },
         whoami: () => {
@@ -172,10 +192,10 @@ Skills:
     };
 
     let exitConfirmation = false;
+    let typingInterval = null;
 
     // Function to simulate typing effect
     const typeText = (text, callback) => {
-        // If text contains HTML tags, set innerHTML directly without typing effect
         if (/<[a-z][\s\S]*>/i.test(text)) {
             output.innerHTML += text;
             output.scrollTop = output.scrollHeight;
@@ -183,14 +203,14 @@ Skills:
             return;
         }
         let i = 0;
-        const interval = setInterval(() => {
-            // Replace newline characters with <br> for HTML line breaks
+        typingInterval = setInterval(() => {
             const char = text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
             output.innerHTML += char;
             i++;
             output.scrollTop = output.scrollHeight;
             if (i >= text.length) {
-                clearInterval(interval);
+                clearInterval(typingInterval);
+                typingInterval = null;
                 if (callback) callback();
             }
         }, 20);
@@ -222,30 +242,63 @@ Skills:
         if (commands[command]) {
             return commands[command](args);
         } else {
-            return `Command not found: \${command}\nType "help" for a list of available commands.`;
+            return `Command not found: ${command}\nType "help" for a list of available commands.`;
         }
     };
 
     input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             const command = input.value.trim();
-            output.innerHTML += `shaurya@portfolio:~$ \${command}\n`;
+            if (command) {
+                // Add command to history
+                commandHistory.push(command);
+                historyIndex = commandHistory.length; // Reset history index
+            }
+            output.innerHTML += `shaurya@portfolio:~$ ${command}\n`;
             input.value = "";
             input.disabled = true;
             const response = processCommand(command);
-            typeText(response + "\n", () => {
-                if (exitConfirmation && response.startsWith('Session terminated')) {
-                    // Hide input and show exit message
-                    input.style.display = 'none';
-                } else {
+            if (response instanceof Promise) {
+                response.then(res => typeText(res + "\n", () => {
                     input.disabled = false;
                     input.focus();
-                }
-            });
+                }));
+            } else {
+                typeText(response + "\n", () => {
+                    input.disabled = false;
+                    input.focus();
+                });
+            }
+        } else if (e.key === "ArrowUp") {
+            // Navigate up in command history
+            if (historyIndex > 0) {
+                historyIndex--;
+                input.value = commandHistory[historyIndex];
+            }
+        } else if (e.key === "ArrowDown") {
+            // Navigate down in command history
+            if (historyIndex < commandHistory.length - 1) {
+                historyIndex++;
+                input.value = commandHistory[historyIndex];
+            } else {
+                historyIndex = commandHistory.length; // Reset to empty input
+                input.value = '';
+            }
         }
     });
 
-    // Helper function to open links and mailto in new tab or mail client
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "c" && e.ctrlKey) {
+            clearInterval(typingInterval);
+            typingInterval = null;
+            output.innerHTML += '^C\n';
+            input.disabled = false;
+            input.value = '';
+            input.focus();
+            e.preventDefault();
+        }
+    });
+
     function openLink(event, url) {
         event.preventDefault();
         if (url.startsWith('mailto:')) {
@@ -255,7 +308,6 @@ Skills:
         }
     }
 
-    // Add event listener to open links with target="_blank" in a new tab on click
     document.getElementById("output").addEventListener("click", (event) => {
         const target = event.target;
         if (target.tagName === "A" && target.target === "_blank") {
@@ -264,6 +316,5 @@ Skills:
         }
     });
 
-    // Initial welcome message with typing effect
     typeText("Welcome to Shaurya's Terminal Portfolio!\nType 'help' to get started.\n");
 });
