@@ -71,7 +71,7 @@ Work:
             return `
 Resume:
 -------
-<a href="https://drive.google.com/file/d/1fPgOeEYSdQK4-_Qcl0Iu8RUpiIgEJea4/view?usp=sharings" target="_blank" style="color:#00ff00; text-decoration: underline;">View my resume here</a>
+<a href="https://drive.google.com/file/d/13X1PgE5B91mB8yGuBDlHwnNQ3t8I1AZf/view?usp=sharing" target="_blank" style="color:#00ff00; text-decoration: underline;">View my resume here</a>
 `;
         },
         contact: (args) => {
