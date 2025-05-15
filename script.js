@@ -58,31 +58,69 @@ Some of my accomplishments include winning hackathons, completing projects, and 
 That’s the gist of who I am—part code wizard, part snack enthusiast, and full-time internet explorer (not the browser, though). If you’re still reading this, congrats—you’ve unlocked the secret level of my life story! Do check out my previous works and resume to see what I’ve been up to. Now, let’s connect and create something amazing… or at least trade bad tech jokes. Your call!
 `;
         },
-        work: () => {
-            return `
-Work:
------
-1. Project 1: AI Chatbot
-2. Portfolio Website
-3. E-commerce Platform
+        projects: () => {
+            const projectsContent = `
+Projects
+--------
+1. GFG AI Chatbot
+Description: An advanced AI chatbot system featuring emotion analysis, ethical monitoring, and digital twin integration, with comprehensive backend and frontend components.
+Technologies: Python, Flask, JavaScript, HTML, CSS
+GitHub:<a href="https://github.com/s7g4/gfg-ai-chatbot" target="_blank" style="color:#00ff00; text-decoration: underline;">gfg-ai-chatbot</a><br>
+
+2. Accenture Hackathon Project
+Description: A project developed for the Accenture Hackathon, focusing on enhancing job screening processes using AI and data intelligence.
+Technologies: JavaScript, Node.js, HTML, CSS
+GitHub:<a href="https://github.com/s7g4/Accenture-Hackathon" target="_blank" style="color:#00ff00; text-decoration: underline;">Accenture-Hackathon</a><br>
+
+3. AI Terminal Project
+Description: A terminal-based AI project integrating conversational AI capabilities within a command-line interface.
+Technologies: Python, OpenAI API, Terminal UI
+GitHub:<a href="https://github.com/s7g4/ai-terminal" target="_blank" style="color:#00ff00; text-decoration: underline;">ai-Terminal</a><br>
 `;
+            return Promise.resolve(projectsContent);
+        },
+        project: () => {
+            // Alias for projects command
+            return commands.projects();
+        },
+        work: () => {
+            const workContent = `
+Work Projects
+-------------
+1. SpaceCAN – Rust Implementation
+Description: A Rust-based implementation of the SpaceCAN protocol for small spacecraft systems, focusing on efficient and reliable communication between subsystems.
+Technologies: Rust, Embedded Systems, CAN Protocol, Concurrency, Error Handling
+GitHub:<a href="https://github.com/s7g4/rust-spacecan" target="_blank" style="color:#00ff00; text-decoration: underline;">rust-spacecan</a><br>
+
+2. Arti-KeyMgmt
+Description: A project aimed at managing cryptographic keys securely, possibly integrating with the Arti Tor client for enhanced privacy.
+Technologies: Rust, Cryptography, Key Management
+GitHub:<a href="https://github.com/s7g4/arti-keymgmt" target="_blank" style="color:#00ff00; text-decoration: underline;">arti-keymgmt</a><br>
+
+3. Personal Portfolio Website
+Description: A terminal-inspired portfolio website showcasing projects, skills, and experiences.
+Technologies: JavaScript, HTML, CSS
+GitHub: <a href="https://github.com/s7g4/Portfolio" target="_blank" style="color:#00ff00; text-decoration: underline;">Portfolio Website</a><br>
+`;
+            return Promise.resolve(workContent);
         },
         resume: () => {
-            return `
+            const resumeContent = `
 Resume:
 -------
 <a href="https://drive.google.com/file/d/13X1PgE5B91mB8yGuBDlHwnNQ3t8I1AZf/view?usp=sharing" target="_blank" style="color:#00ff00; text-decoration: underline;">View my resume here</a>
 `;
+            return Promise.resolve(resumeContent);
         },
-        contact: (args) => {
-            const nameArg = args.find(arg => arg.startsWith('--name='));
-            const msgArg = args.find(arg => arg.startsWith('--msg='));
-            if (!nameArg || !msgArg) {
-                return "Usage: contact --name=\"Your Name\" --msg=\"Your Message\"";
-            }
-            const name = nameArg.split('=')[1];
-            const msg = msgArg.split('=')[1];
-            return `Thank you, ${name}! Your message: "${msg}" has been received.`;
+        contact: () => {
+            return `
+Contact Me:
+-----------
+LinkedIn: <a href="https://www.linkedin.com/in/shaurya-gaur-353a7828a/" target="_blank" style="color:#00ff00; text-decoration: underline;">https://www.linkedin.com/in/shaurya-gaur-353a7828a/</a><br>
+GitHub: <a href="https://github.com/s7g4" target="_blank" style="color:#00ff00; text-decoration: underline;">https://github.com/s7g4</a><br>
+Instagram: <a href="https://www.instagram.com/_idk._.afk_/" target="_blank" style="color:#00ff00; text-decoration: underline;">https://www.instagram.com/_idk._.afk_/</a><br>
+Email: <a href="mailto:shauryagaur07@gmail.com" target="_blank" style="color:#00ff00; text-decoration: underline;">shauryagaur07@gmail.com</a><br>
+`;
         },
         clear: () => {
             output.innerHTML = '';
@@ -91,21 +129,19 @@ Resume:
         date: () => {
             return new Date().toString();
         },
-        time: () => {
-            return new Date().toLocaleTimeString();
-        },
         skills: () => {
-            return `
+            const skillsContent = `
 Skills:
 -------
-- JavaScript, Python, Java
-- React, Node.js, Express
-- Machine Learning, AI
-- SQL, NoSQL Databases
-- Docker, Kubernetes
+- Programming Languages: Rust, Python, JavaScript
+- Web Development: HTML, CSS, Flask, Node.js
+- AI & Machine Learning: OpenAI API, Emotion Analysis, Ethical AI
+- Embedded Systems: CAN Protocol, Concurrency, Error Handling
+- Tools & Platforms: GitHub, Terminal UI, Cryptography
 `;
+            return Promise.resolve(skillsContent);
         },
-        projects: () => {
+        projectsJson: () => {
             return fetch('projects.json')
                 .then(res => res.json())
                 .then(projects => {
@@ -117,18 +153,6 @@ Skills:
                 })
                 .catch(() => "Failed to load projects.");
         },
-        github: () => {
-            return fetch('https://api.github.com/users/s7g4/repos')
-                .then(res => res.json())
-                .then(repos => {
-                    let repoList = "GitHub Repositories:\n---------------------\n";
-                    repos.forEach(repo => {
-                        repoList += `Name: ${repo.name}\nDescription: ${repo.description || 'No description'}\nURL: ${repo.html_url}\n\n`;
-                    });
-                    return repoList;
-                })
-                .catch(() => "Failed to load GitHub repositories.");
-        },
         exit: () => {
             return 'Are you sure you want to exit? (y/n)';
         },
@@ -139,13 +163,11 @@ Available Commands:
 home      - Go to the home page
 about     - Learn more about me
 resume    - View my resume
-contact   - Get in touch with me
-clear     - Clear the terminal output
-date      - Show current date and time
-time      - Show current time
 ls        - List items in work, project, or skills sets (usage: ls --work, ls --project, ls --skills)
 whoami    - Display user identity information
-github    - View GitHub repositories
+clear     - Clear the terminal output
+date      - Show current date and time
+contact   - Get in touch with me
 help      - Show this help message
 exit      - Exit the terminal
 `;
@@ -158,36 +180,58 @@ exit      - Exit the terminal
             switch (subcommand) {
                 case '--work':
                     return `
-Work Items:
------------
-1. Project 1: AI Chatbot
-2. Portfolio Website
-3. E-commerce Platform
+Work Projects
+-------------
+1. SpaceCAN – Rust Implementation
+Description: A Rust-based implementation of the SpaceCAN protocol for small spacecraft systems, focusing on efficient and reliable communication between subsystems.
+Technologies: Rust, Embedded Systems, CAN Protocol, Concurrency, Error Handling
+GitHub:<a href="https://github.com/s7g4/rust-spacecan" target="_blank" style="color:#00ff00; text-decoration: underline;">rust-spacecan</a><br>
+
+2. Arti-KeyMgmt
+Description: A project aimed at managing cryptographic keys securely, possibly integrating with the Arti Tor client for enhanced privacy.
+Technologies: Rust, Cryptography, Key Management
+GitHub:<a href="https://github.com/s7g4/arti-keymgmt" target="_blank" style="color:#00ff00; text-decoration: underline;">arti-keymgmt</a><br>
+
+3. Personal Portfolio Website
+Description: A terminal-inspired portfolio website showcasing projects, skills, and experiences.
+Technologies: JavaScript, HTML, CSS
+GitHub: <a href="https://github.com/s7g4/Portfolio" target="_blank" style="color:#00ff00; text-decoration: underline;">Portfolio Website</a><br>
 `;
                 case '--project':
                     return `
-Projects:
----------
-1. AI Chatbot - An intelligent chatbot using NLP.
-2. Portfolio Website - Personal portfolio showcasing projects.
-3. E-commerce Platform - Full-stack e-commerce application.
+Projects
+--------
+1. GFG AI Chatbot
+Description: An advanced AI chatbot system featuring emotion analysis, ethical monitoring, and digital twin integration, with comprehensive backend and frontend components.
+Technologies: Python, Flask, JavaScript, HTML, CSS
+GitHub:<a href="https://github.com/s7g4/gfg-ai-chatbot" target="_blank" style="color:#00ff00; text-decoration: underline;">gfg-ai-chatbot</a><br>
+
+2. Accenture Hackathon Project
+Description: A project developed for the Accenture Hackathon, focusing on enhancing job screening processes using AI and data intelligence.
+Technologies: JavaScript, Node.js, HTML, CSS
+GitHub:<a href="https://github.com/s7g4/Accenture-Hackathon" target="_blank" style="color:#00ff00; text-decoration: underline;">Accenture-Hackathon</a><br>
+
+3. AI Terminal Project
+Description: A terminal-based AI project integrating conversational AI capabilities within a command-line interface.
+Technologies: Python, OpenAI API, Terminal UI
+GitHub:<a href="https://github.com/s7g4/ai-terminal" target="_blank" style="color:#00ff00; text-decoration: underline;">ai-Terminal</a><br>
 `;
                 case '--skills':
                     return `
 Skills:
 -------
-- JavaScript, Python, Java
-- React, Node.js, Express
-- Machine Learning, AI
-- SQL, NoSQL Databases
-- Docker, Kubernetes
+-Programming Languages: Rust, Python, JavaScript
+-Web Development: HTML, CSS, Flask, Node.js
+-AI & Machine Learning: OpenAI API, Emotion Analysis, Ethical AI
+-Embedded Systems: CAN Protocol, Concurrency, Error Handling
+-Tools & Platforms: GitHub, Terminal UI, Cryptography
 `;
                 default:
                     return 'Invalid subcommand. Usage: ls --work | --project | ls --skills';
             }
         },
         whoami: () => {
-            return "I am Shaurya Gaur, a Full Stack Developer, AI/ML Specialist, and Technological Enthusiast.";
+            return "Portfolio@viewer";
         }
     };
 
@@ -195,26 +239,50 @@ Skills:
     let typingInterval = null;
 
     // Function to simulate typing effect
-    const typeText = (text, callback) => {
-        if (/<[a-z][\s\S]*>/i.test(text)) {
-            output.innerHTML += text;
-            output.scrollTop = output.scrollHeight;
-            if (callback) callback();
-            return;
-        }
-        let i = 0;
-        typingInterval = setInterval(() => {
-            const char = text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
-            output.innerHTML += char;
-            i++;
-            output.scrollTop = output.scrollHeight;
-            if (i >= text.length) {
-                clearInterval(typingInterval);
-                typingInterval = null;
-                if (callback) callback();
+    let isTyping = false;
+    let stopTyping = false;
+    
+    async function typeText(html, callback) {
+        if (isTyping) return; // Prevent overlapping typing
+        isTyping = true;
+        stopTyping = false;
+    
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html.replace(/\n/g, '<br>');
+        const nodes = Array.from(tempDiv.childNodes);
+    
+        for (let node of nodes) {
+            if (stopTyping) break;
+    
+            if (node.nodeType === Node.TEXT_NODE) {
+                const text = node.textContent;
+                let span = document.createElement('span');
+                output.appendChild(span);
+                for (let char of text) {
+                    if (stopTyping) break;
+                    span.textContent += char;
+                    output.scrollTop = output.scrollHeight;
+                    await new Promise(r => setTimeout(r, 10)); // typing delay
+                }
+            } else {
+                output.appendChild(node.cloneNode(true));
             }
-        }, 20);
-    };
+            output.scrollTop = output.scrollHeight;
+        }
+    
+        isTyping = false;
+        if (callback && !stopTyping) callback();
+    }
+    
+
+    output.addEventListener("click", (event) => {
+        const anchor = event.target.closest('a'); // Find the closest <a> element
+        if (anchor && anchor.href) {
+            event.preventDefault(); // Prevent default navigation
+            window.open(anchor.href, '_blank'); // Open the link in a new tab
+        }
+    });
+    
 
     const processCommand = (input) => {
         if (exitConfirmation) {
@@ -289,15 +357,17 @@ Skills:
 
     document.addEventListener("keydown", (e) => {
         if (e.key === "c" && e.ctrlKey) {
-            clearInterval(typingInterval);
-            typingInterval = null;
-            output.innerHTML += '^C\n';
-            input.disabled = false;
-            input.value = '';
-            input.focus();
-            e.preventDefault();
+            if (isTyping) {
+                stopTyping = true; // Interrupt typing immediately
+                output.innerHTML += '^C\n'; // Show ^C on terminal
+                input.disabled = false;
+                input.value = '';
+                input.focus();
+                e.preventDefault();
+            }
         }
     });
+    
 
     function openLink(event, url) {
         event.preventDefault();
@@ -307,14 +377,6 @@ Skills:
             window.open(url, '_blank');
         }
     }
-
-    document.getElementById("output").addEventListener("click", (event) => {
-        const target = event.target;
-        if (target.tagName === "A" && target.target === "_blank") {
-            event.preventDefault();
-            window.open(target.href, "_blank");
-        }
-    });
 
     typeText("Welcome to Shaurya's Terminal Portfolio!\nType 'help' to get started.\n");
 });
