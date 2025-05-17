@@ -108,7 +108,7 @@ GitHub: <a href="https://github.com/s7g4/Portfolio" target="_blank" style="color
             const resumeContent = `
 Resume:
 -------
-<a href="https://drive.google.com/file/d/13X1PgE5B91mB8yGuBDlHwnNQ3t8I1AZf/view?usp=sharing" target="_blank" style="color:#00ff00; text-decoration: underline;">View my resume here</a>
+<a href="https://drive.google.com/file/d/1goSTXfmkYw4YWa9h6jdQ58JWIFeM5PQK/view?usp=sharing" target="_blank" style="color:#00ff00; text-decoration: underline;">View my resume here</a>
 `;
             return Promise.resolve(resumeContent);
         },
