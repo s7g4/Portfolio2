@@ -72,10 +72,10 @@ Description: A project developed for the Accenture Hackathon, focusing on enhanc
 Technologies: JavaScript, Node.js, HTML, CSS
 GitHub:<a href="https://github.com/s7g4/Accenture-Hackathon" target="_blank" style="color:#00ff00; text-decoration: underline;">Accenture-Hackathon</a><br>
 
-3. AI Terminal Project
-Description: A terminal-based AI project integrating conversational AI capabilities within a command-line interface.
-Technologies: Python, OpenAI API, Terminal UI
-GitHub:<a href="https://github.com/s7g4/ai-terminal" target="_blank" style="color:#00ff00; text-decoration: underline;">ai-Terminal</a><br>
+3. Q-Safe
+Description: A quantum-inspired secure communication system designed to ensure confidentiality and resilience using advanced cryptographic models. Built for high-assurance message transfer in critical systems.
+Technologies: Rust, Cryptography, Quantum-Inspired Algorithms, Secure Communication
+GitHub: <a href="https://github.com/s7g4/qsafe" target="_blank" style="color:#00ff00; text-decoration: underline;">qsafe</a><br>
 `;
             return Promise.resolve(projectsContent);
         },
@@ -92,15 +92,15 @@ Description: A Rust-based implementation of the SpaceCAN protocol for small spac
 Technologies: Rust, Embedded Systems, CAN Protocol, Concurrency, Error Handling
 GitHub:<a href="https://github.com/s7g4/rust-spacecan" target="_blank" style="color:#00ff00; text-decoration: underline;">rust-spacecan</a><br>
 
-2. Arti-KeyMgmt
-Description: A project aimed at managing cryptographic keys securely, possibly integrating with the Arti Tor client for enhanced privacy.
-Technologies: Rust, Cryptography, Key Management
-GitHub:<a href="https://github.com/s7g4/arti-keymgmt" target="_blank" style="color:#00ff00; text-decoration: underline;">arti-keymgmt</a><br>
+2. Zed-Pluto
+Description: Adds support for the Pluto scripting language in the Zed code editor via a custom Tree-sitter grammar, enabling syntax highlighting, code folding, and expression parsing.
+Technologies: Rust, Tree-sitter, Zed Editor, Language Grammar
+GitHub: <a href="https://github.com/s7g4/zed-pluto" target="_blank" style="color:#00ff00; text-decoration: underline;">zed-pluto</a><br>
 
-3. Personal Portfolio Website
-Description: A terminal-inspired portfolio website showcasing projects, skills, and experiences.
-Technologies: JavaScript, HTML, CSS
-GitHub: <a href="https://github.com/s7g4/Portfolio" target="_blank" style="color:#00ff00; text-decoration: underline;">Portfolio Website</a><br>
+3. AI Terminal Project
+Description: A terminal-based AI project integrating conversational AI capabilities within a command-line interface.
+Technologies: Python, OpenAI API, Terminal UI
+GitHub:<a href="https://github.com/s7g4/ai-terminal" target="_blank" style="color:#00ff00; text-decoration: underline;">ai-Terminal</a><br>
 `;
             return Promise.resolve(workContent);
         },
@@ -187,15 +187,15 @@ Description: A Rust-based implementation of the SpaceCAN protocol for small spac
 Technologies: Rust, Embedded Systems, CAN Protocol, Concurrency, Error Handling
 GitHub:<a href="https://github.com/s7g4/rust-spacecan" target="_blank" style="color:#00ff00; text-decoration: underline;">rust-spacecan</a><br>
 
-2. Arti-KeyMgmt
-Description: A project aimed at managing cryptographic keys securely, possibly integrating with the Arti Tor client for enhanced privacy.
-Technologies: Rust, Cryptography, Key Management
-GitHub:<a href="https://github.com/s7g4/arti-keymgmt" target="_blank" style="color:#00ff00; text-decoration: underline;">arti-keymgmt</a><br>
+2. Zed-Pluto
+Description: Adds support for the Pluto scripting language in the Zed code editor via a custom Tree-sitter grammar, enabling syntax highlighting, code folding, and expression parsing.
+Technologies: Rust, Tree-sitter, Zed Editor, Language Grammar
+GitHub: <a href="https://github.com/s7g4/zed-pluto" target="_blank" style="color:#00ff00; text-decoration: underline;">zed-pluto</a><br>
 
-3. Personal Portfolio Website
-Description: A terminal-inspired portfolio website showcasing projects, skills, and experiences.
-Technologies: JavaScript, HTML, CSS
-GitHub: <a href="https://github.com/s7g4/Portfolio" target="_blank" style="color:#00ff00; text-decoration: underline;">Portfolio Website</a><br>
+3. AI Terminal Project
+Description: A terminal-based AI project integrating conversational AI capabilities within a command-line interface.
+Technologies: Python, OpenAI API, Terminal UI
+GitHub:<a href="https://github.com/s7g4/ai-terminal" target="_blank" style="color:#00ff00; text-decoration: underline;">ai-Terminal</a><br>
 `;
                 case '--project':
                     return `
@@ -211,10 +211,10 @@ Description: A project developed for the Accenture Hackathon, focusing on enhanc
 Technologies: JavaScript, Node.js, HTML, CSS
 GitHub:<a href="https://github.com/s7g4/Accenture-Hackathon" target="_blank" style="color:#00ff00; text-decoration: underline;">Accenture-Hackathon</a><br>
 
-3. AI Terminal Project
-Description: A terminal-based AI project integrating conversational AI capabilities within a command-line interface.
-Technologies: Python, OpenAI API, Terminal UI
-GitHub:<a href="https://github.com/s7g4/ai-terminal" target="_blank" style="color:#00ff00; text-decoration: underline;">ai-Terminal</a><br>
+3. Q-Safe
+Description: A quantum-inspired secure communication system designed to ensure confidentiality and resilience using advanced cryptographic models. Built for high-assurance message transfer in critical systems.
+Technologies: Rust, Cryptography, Quantum-Inspired Algorithms, Secure Communication
+GitHub: <a href="https://github.com/s7g4/qsafe" target="_blank" style="color:#00ff00; text-decoration: underline;">qsafe</a><br>
 `;
                 case '--skills':
                     return `
