@@ -86,7 +86,7 @@ Type <span style="color: #22c55e;">'about'</span> to learn more about me.
             return `
 <span style="color: #22c55e; font-weight: bold;">About Me</span>
 
-Hey there! 👋 I'm <span style="color: #22c55e;">Shaurya Gaur</span>, a passionate Full Stack Developer and AI/ML Specialist.
+Hey there! I'm <span style="color: #22c55e;">Shaurya Gaur</span>, a passionate Full Stack Developer and AI/ML Specialist.
 
 I'm a Computer Science student at Netaji Subash Institute of Technology with a 
 deep love for creating innovative solutions. Whether it's building scalable web 
@@ -127,30 +127,20 @@ Type <span style="color: #22c55e;">'skills'</span> to see my technical expertise
 <span style="color: #22c55e; font-weight: bold;">Projects</span>
 --------
 
-<span style="color: #fbbf24;">1. GFG AI Chatbot</span>
-   An advanced AI chatbot system featuring emotion analysis, ethical monitoring, and digital twin integration
-   <span style="color: #666;">Tech:</span> Python, Flask, JavaScript, HTML, CSS, OpenAI
-   <span style="color: #22c55e;">→</span> <a href="https://github.com/s7g4/gfg-ai-chatbot" target="_blank" style="color:#00ff00; text-decoration: underline;">github.com/s7g4/gfg-ai-chatbot</a>
+<span style="color: #fbbf24;">1. AI Terminal</span>
+A multi-agent, extensible terminal assistant featuring plugins for emails, job search, context-aware AI actions, and dynamic tool integrations.
+   <span style="color: #666;">Tech:</span> Python, FastAPI, Next.js, AI Agents
+   <span style="color: #22c55e;">→</span> <a href="https://github.com/s7g4/ai_terminal" target="_blank" style="color:#00ff00; text-decoration: underline;">github.com/s7g4/gfg-ai-chatbot</a>
 
-<span style="color: #fbbf24;">2. Accenture Hackathon Project</span>
-   A project developed for the Accenture Hackathon, focusing on enhancing job screening processes using AI
-   <span style="color: #666;">Tech:</span> JavaScript, Node.js, HTML, CSS, AI/ML
-   <span style="color: #22c55e;">→</span> <a href="https://github.com/s7g4/Accenture-Hackathon" target="_blank" style="color:#00ff00; text-decoration: underline;">github.com/s7g4/Accenture-Hackathon</a>
+<span style="color: #fbbf24;">2. QSafe – Quantum-Inspired Secure Communication</span>
+A secure communication system using Rust, AES-GCM, ECDH, and quantum-inspired cryptography foundations to resist future quantum attacks.
+   <span style="color: #666;">Tech:</span> Rust, AES-GCM, ECDH, Tokio, Axum
+   <span style="color: #22c55e;">→</span> <a href="https://github.com/s7g4/qsafe" target="_blank" style="color:#00ff00; text-decoration: underline;">github.com/s7g4/Accenture-Hackathon</a>
 
-<span style="color: #fbbf24;">3. Q-Safe</span>
-   A quantum-inspired secure communication system designed to ensure confidentiality and resilience
-   <span style="color: #666;">Tech:</span> Rust, Cryptography, Quantum-Inspired Algorithms, Secure Communication
-   <span style="color: #22c55e;">→</span> <a href="https://github.com/s7g4/qsafe" target="_blank" style="color:#00ff00; text-decoration: underline;">github.com/s7g4/qsafe</a>
-
-<span style="color: #fbbf24;">4. Thelinkify</span>
-   Smart link shortener with analytics
-   <span style="color: #666;">Tech:</span> JavaScript, MongoDB, Express
-   <span style="color: #22c55e;">→</span> <a href="https://github.com/s7g4/thelinkify" target="_blank" style="color:#00ff00; text-decoration: underline;">github.com/s7g4/thelinkify</a>
-
-<span style="color: #fbbf24;">5. Blog Website</span>
-   Full-featured blogging platform
-   <span style="color: #666;">Tech:</span> Python, Flask, PostgreSQL
-   <span style="color: #22c55e;">→</span> <a href="https://github.com/s7g4/Blog-Website" target="_blank" style="color:#00ff00; text-decoration: underline;">github.com/s7g4/Blog-Website</a>
+<span style="color: #fbbf24;">3. RustSat-ESA</span>
+A Rust-based satellite systems toolkit following ESA standards, including protocol parsing, packet structures, and embedded-systems compatibility.
+   <span style="color: #666;">Tech:</span> Rust, no_std, Space Protocols, ESA Compliance
+   <span style="color: #22c55e;">→</span> <a href="https://github.com/s7g4/rustsat-esa" target="_blank" style="color:#00ff00; text-decoration: underline;">github.com/s7g4/qsafe</a>
 
 Type <span style="color: #22c55e;">'github'</span> to see all my projects!
 `;
@@ -173,11 +163,6 @@ Type <span style="color: #22c55e;">'github'</span> to see all my projects!
    Adds support for the Pluto scripting language in the Zed code editor via a custom Tree-sitter grammar
    <span style="color: #666;">Tech:</span> Rust, Tree-sitter, Zed Editor, Language Grammar
    <span style="color: #22c55e;">→</span> <a href="https://github.com/s7g4/zed-pluto" target="_blank" style="color:#00ff00; text-decoration: underline;">github.com/s7g4/zed-pluto</a>
-
-<span style="color: #fbbf24;">3. AI Terminal Project</span>
-   A terminal-based AI project integrating conversational AI capabilities within a command-line interface
-   <span style="color: #666;">Tech:</span> Python, OpenAI API, Terminal UI
-   <span style="color: #22c55e;">→</span> <a href="https://github.com/s7g4/ai-terminal" target="_blank" style="color:#00ff00; text-decoration: underline;">github.com/s7g4/ai-Terminal</a>
 `;
             return Promise.resolve(workContent);
         },
@@ -205,7 +190,7 @@ Type <span style="color: #22c55e;">'github'</span> to see all my projects!
    → Won multiple hackathons
    → Published technical articles
    → Active open-source contributor
-   → Built portfolio of 20+ projects
+   → Built portfolio of 5+ projects
 `;
         },
         education: () => {
@@ -232,7 +217,6 @@ Type <span style="color: #22c55e;">'github'</span> to see all my projects!
    → React & Modern JavaScript
 
 <span style="color: #fbbf24;">Academic Achievements:</span>
-   → Dean's List Scholar
    → Hackathon Winner
    → Research Paper Publications
 `;
@@ -241,8 +225,8 @@ Type <span style="color: #22c55e;">'github'</span> to see all my projects!
             const resumeContent = `
 <span style="color: #22c55e; font-weight: bold;">Resume / CV</span>
 
-📄 Download my resume:
-→ <a href="https://drive.google.com/file/d/1goSTXfmkYw4YWa9h6jdQ58JWIFeM5PQK/view?usp=sharing" target="_blank" style="color:#00ff00; text-decoration: underline;">View my resume here</a>
+Download my resume:
+→ <a href="https://drive.google.com/file/d/1vF6jF2TKGWXBbEqygZ6loGrhb3BwaO0u/view?usp=sharing" target="_blank" style="color:#00ff00; text-decoration: underline;">View my resume here</a>
 
 Or view online sections:
 → Type <span style="color: #22c55e;">'about'</span> for bio
@@ -290,8 +274,6 @@ Or view online sections:
   ▹ Python       ████████████ Expert
   ▹ JavaScript   ███████████░ Advanced
   ▹ TypeScript   ██████████░░ Advanced
-  ▹ Java         █████████░░░ Intermediate
-  ▹ C++          ████████░░░░ Intermediate
   ▹ Rust         ████████░░░░ Intermediate
   ▹ SQL          ██████████░░ Advanced
 
@@ -300,12 +282,9 @@ Or view online sections:
   ▹ Next.js      ██████████░░ Advanced
   ▹ HTML/CSS     ████████████ Expert
   ▹ Tailwind CSS ███████████░ Advanced
-  ▹ Redux        █████████░░░ Intermediate
 
 <span style="color: #fbbf24;">Backend:</span>
   ▹ Node.js      ██████████░░ Advanced
-  ▹ Express.js   ██████████░░ Advanced
-  ▹ Flask        █████████░░░ Intermediate
   ▹ MongoDB      ██████████░░ Advanced
   ▹ PostgreSQL   █████████░░░ Intermediate
 
@@ -313,13 +292,10 @@ Or view online sections:
   ▹ TensorFlow   █████████░░░ Intermediate
   ▹ PyTorch      ████████░░░░ Intermediate
   ▹ Scikit-learn ██████████░░ Advanced
-  ▹ OpenAI API   ███████████░ Advanced
-  ▹ Langchain    ██████████░░ Advanced
 
 <span style="color: #fbbf24;">Tools & Platforms:</span>
   ▹ Git          ████████████ Expert
   ▹ Docker       ████████░░░░ Intermediate
-  ▹ AWS          ███████░░░░░ Basic
   ▹ VS Code      ████████████ Expert
   ▹ Cryptography ████████░░░░ Intermediate
 `;
@@ -383,7 +359,7 @@ Or view online sections:
   <span style="color: #22c55e;">fortune</span>     - Fortune cookie
   <span style="color: #22c55e;">cowsay</span>      - Cow says...
   <span style="color: #22c55e;">sudo</span>        - Try sudo...
-  <span style="color: #22c55e;">rickroll</span>   - Never gonna...
+  <span style="color: #22c55e;">rickroll</span>    - Never gonna...
   <span style="color: #22c55e;">secret</span>      - ???
 `;
         },
@@ -410,9 +386,7 @@ Usage: ls --work | --project | --skills
 `;
         },
         whoami: () => {
-            return `shaurya
-<span style="color: #666;">Full Stack Developer | AI/ML Specialist</span>
-Portfolio@viewer`;
+            return `Portfolio@viewer`;
         },
         // Social Commands
         github: () => {
