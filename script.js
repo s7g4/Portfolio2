@@ -100,10 +100,10 @@ I'm always eager to learn and grow.
 → Collaborating with talented people
 
 <span style="color: #fbbf24;">Quick Facts:</span>
-→ ☕ Coffee enthusiast (fuel for coding)
-→ 🎮 Gamer in spare time
-→ 📚 Always reading tech blogs
-→ 🚀 Open source contributor
+→ Coffee enthusiast (fuel for coding)
+→ Gamer in spare time
+→ Always reading tech blogs
+→ Open source contributor
 
 <span style="color: #fbbf24;">More Details:</span>
 I am a Full Stack Developer, AI/ML Specialist, and a Technological Enthusiast. I have a passion for technology and I am always looking for new ways to learn and grow. I am a quick learner and I am always looking for new challenges to tackle.
@@ -185,7 +185,7 @@ Type <span style="color: #22c55e;">'github'</span> to see all my projects!
             return `
 <span style="color: #22c55e; font-weight: bold;">Work Experience</span>
 
-<span style="color: #fbbf24;">🏢 Tech Innovator</span>
+<span style="color: #fbbf24;">Tech Innovator</span>
    <span style="color: #666;">Role:</span> Full Stack Developer & AI/ML Specialist
    <span style="color: #666;">Duration:</span> Ongoing
    
@@ -194,14 +194,14 @@ Type <span style="color: #22c55e;">'github'</span> to see all my projects!
    → Participated in hackathons and coding competitions
    → Collaborated on open-source projects
 
-<span style="color: #fbbf24;">🎓 Academic Projects</span>
+<span style="color: #fbbf24;">Academic Projects</span>
    <span style="color: #666;">Institution:</span> Netaji Subash Institute of Technology
    
    → Lead developer for multiple capstone projects
    → Research in AI/ML applications
    → Teaching assistant for programming courses
 
-<span style="color: #fbbf24;">🏆 Achievements:</span>
+<span style="color: #fbbf24;">Achievements:</span>
    → Won multiple hackathons
    → Published technical articles
    → Active open-source contributor
@@ -212,7 +212,7 @@ Type <span style="color: #22c55e;">'github'</span> to see all my projects!
             return `
 <span style="color: #22c55e; font-weight: bold;">Education</span>
 
-<span style="color: #fbbf24;">🎓 Bachelor of Technology - Computer Science</span>
+<span style="color: #fbbf24;">Bachelor of Technology - Computer Science</span>
    <span style="color: #666;">Institution:</span> Netaji Subash Institute of Technology
    <span style="color: #666;">Status:</span> Currently Pursuing
    
@@ -224,14 +224,14 @@ Type <span style="color: #22c55e;">'github'</span> to see all my projects!
    → Operating Systems
    → Computer Networks
 
-<span style="color: #fbbf24;">📚 Certifications & Learning:</span>
+<span style="color: #fbbf24;">Certifications & Learning:</span>
    → Full Stack Web Development
    → Machine Learning Specialization
    → Cloud Computing Fundamentals
    → Advanced Python Programming
    → React & Modern JavaScript
 
-<span style="color: #fbbf24;">🏆 Academic Achievements:</span>
+<span style="color: #fbbf24;">Academic Achievements:</span>
    → Dean's List Scholar
    → Hackathon Winner
    → Research Paper Publications
@@ -251,7 +251,7 @@ Or view online sections:
 → Type <span style="color: #22c55e;">'education'</span> for academic background
 → Type <span style="color: #22c55e;">'projects'</span> for portfolio
 
-<span style="color: #fbbf24;">💡 Tip:</span> Type <span style="color: #22c55e;">'contact'</span> to get in touch directly!
+<span style="color: #fbbf24;">Tip:</span> Type <span style="color: #22c55e;">'contact'</span> to get in touch directly!
 `;
             return Promise.resolve(resumeContent);
         },
@@ -260,16 +260,16 @@ Or view online sections:
 <span style="color: #22c55e; font-weight: bold;">Contact Me:</span>
 -----------
 
-<span style="color: #fbbf24;">💼 LinkedIn:</span>
+<span style="color: #fbbf24;">LinkedIn:</span>
    → <a href="https://www.linkedin.com/in/shaurya-gaur-353a7828a/" target="_blank" style="color:#00ff00; text-decoration: underline;">linkedin.com/in/shaurya-gaur-353a7828a/</a>
 
-<span style="color: #fbbf24;">🐙 GitHub:</span>
+<span style="color: #fbbf24;">GitHub:</span>
    → <a href="https://github.com/s7g4" target="_blank" style="color:#00ff00; text-decoration: underline;">github.com/s7g4</a>
 
-<span style="color: #fbbf24;">📷 Instagram:</span>
+<span style="color: #fbbf24;">Instagram:</span>
    → <a href="https://www.instagram.com/_idk._.afk_/" target="_blank" style="color:#00ff00; text-decoration: underline;">instagram.com/_idk._.afk_/</a>
 
-<span style="color: #fbbf24;">📧 Email:</span>
+<span style="color: #fbbf24;">Email:</span>
    → <a href="mailto:shauryagaur07@gmail.com" target="_blank" style="color:#00ff00; text-decoration: underline;">shauryagaur07@gmail.com</a>
 
 <span style="color: #666;">Quick commands:</span> <span style="color: #22c55e;">email</span>, <span style="color: #22c55e;">github</span>, <span style="color: #22c55e;">linkedin</span>, <span style="color: #22c55e;">instagram</span>
@@ -286,7 +286,7 @@ Or view online sections:
             const skillsContent = `
 <span style="color: #22c55e; font-weight: bold;">Technical Skills</span>
 
-<span style="color: #fbbf24;">💻 Languages:</span>
+<span style="color: #fbbf24;">Languages:</span>
   ▹ Python       ████████████ Expert
   ▹ JavaScript   ███████████░ Advanced
   ▹ TypeScript   ██████████░░ Advanced
@@ -295,28 +295,28 @@ Or view online sections:
   ▹ Rust         ████████░░░░ Intermediate
   ▹ SQL          ██████████░░ Advanced
 
-<span style="color: #fbbf24;">🚀 Frontend:</span>
+<span style="color: #fbbf24;">Frontend:</span>
   ▹ React.js     ███████████░ Advanced
   ▹ Next.js      ██████████░░ Advanced
   ▹ HTML/CSS     ████████████ Expert
   ▹ Tailwind CSS ███████████░ Advanced
   ▹ Redux        █████████░░░ Intermediate
 
-<span style="color: #fbbf24;">⚙️ Backend:</span>
+<span style="color: #fbbf24;">Backend:</span>
   ▹ Node.js      ██████████░░ Advanced
   ▹ Express.js   ██████████░░ Advanced
   ▹ Flask        █████████░░░ Intermediate
   ▹ MongoDB      ██████████░░ Advanced
   ▹ PostgreSQL   █████████░░░ Intermediate
 
-<span style="color: #fbbf24;">🤖 AI/ML:</span>
+<span style="color: #fbbf24;">AI/ML:</span>
   ▹ TensorFlow   █████████░░░ Intermediate
   ▹ PyTorch      ████████░░░░ Intermediate
   ▹ Scikit-learn ██████████░░ Advanced
   ▹ OpenAI API   ███████████░ Advanced
   ▹ Langchain    ██████████░░ Advanced
 
-<span style="color: #fbbf24;">🛠️ Tools & Platforms:</span>
+<span style="color: #fbbf24;">Tools & Platforms:</span>
   ▹ Git          ████████████ Expert
   ▹ Docker       ████████░░░░ Intermediate
   ▹ AWS          ███████░░░░░ Basic
@@ -344,7 +344,7 @@ Or view online sections:
             return `
 <span style="color: #22c55e; font-weight: bold;">Available Commands:</span>
 
-<span style="color: #fbbf24;">📋 PORTFOLIO</span>
+<span style="color: #fbbf24;">PORTFOLIO</span>
   <span style="color: #22c55e;">home</span>        - Go to the home page
   <span style="color: #22c55e;">welcome</span>     - Show welcome banner
   <span style="color: #22c55e;">about</span>       - Learn about me
@@ -356,13 +356,13 @@ Or view online sections:
   <span style="color: #22c55e;">contact</span>     - Get in touch with me
   <span style="color: #22c55e;">resume</span>      - View my resume
 
-<span style="color: #fbbf24;">🔗 SOCIAL</span>
+<span style="color: #fbbf24;">SOCIAL</span>
   <span style="color: #22c55e;">github</span>      - Visit my GitHub
   <span style="color: #22c55e;">linkedin</span>    - Connect on LinkedIn
   <span style="color: #22c55e;">instagram</span>   - Follow on Instagram
   <span style="color: #22c55e;">email</span>       - Send me an email
 
-<span style="color: #fbbf24;">💻 SYSTEM</span>
+<span style="color: #fbbf24;">SYSTEM</span>
   <span style="color: #22c55e;">clear</span>       - Clear terminal
   <span style="color: #22c55e;">history</span>     - Command history
   <span style="color: #22c55e;">whoami</span>      - Current user info
@@ -374,7 +374,7 @@ Or view online sections:
   <span style="color: #22c55e;">pwd</span>         - Print working directory
   <span style="color: #22c55e;">cat</span>         - Display file contents
 
-<span style="color: #fbbf24;">🎮 FUN</span>
+<span style="color: #fbbf24;">FUN</span>
   <span style="color: #22c55e;">matrix</span>      - Enter the Matrix
   <span style="color: #22c55e;">hack</span>        - Hacking simulation
   <span style="color: #22c55e;">coffee</span>      - Make coffee
@@ -482,7 +482,7 @@ Portfolio@viewer`;
 <span style="color: #666;">[████████████████████] 100%</span>
 
 <span style="color: #ef4444;">ACCESS DENIED</span>
-Just kidding! I'm a developer, not a hacker 😄
+Just kidding! I'm a developer, not a hacker
 
 But I can hack together some awesome code!
 Type <span style="color: #22c55e;">'projects'</span> to see what I've built.
@@ -491,29 +491,29 @@ Type <span style="color: #22c55e;">'projects'</span> to see what I've built.
         sudo: (args) => {
             return `
 <span style="color: #ef4444;">[sudo] password for shaurya:</span> 
-Nice try! But you'll need more than sudo to access my secrets 😏
+Nice try! But you'll need more than sudo to access my secrets
 
 <span style="color: #666;">Hint: Try 'help' for actual commands that work!</span>
 `;
         },
         coffee: () => {
             const coffees = [
-                "☕ Brewing fresh coffee... Done! *sip*",
-                "☕ Espresso shot ready! Double shot for extra productivity!",
-                "☕ Making cappuccino... Perfect foam achieved!",
-                "☕ Pour-over coffee in progress... Patience is key!",
-                "☕ Cold brew ready! Smooth and strong!"
+                "Brewing fresh coffee... Done! *sip*",
+                "Espresso shot ready! Double shot for extra productivity!",
+                "Making cappuccino... Perfect foam achieved!",
+                "Pour-over coffee in progress... Patience is key!",
+                "Cold brew ready! Smooth and strong!"
             ];
             return coffees[Math.floor(Math.random() * coffees.length)];
         },
         joke: () => {
             const jokes = [
-                "Why do programmers prefer dark mode?\nBecause light attracts bugs! 🐛",
-                "Why did the developer go broke?\nBecause he used up all his cache! 💸",
-                "How many programmers does it take to change a light bulb?\nNone. It's a hardware problem! 💡",
-                "Why do Java developers wear glasses?\nBecause they don't C#! 👓",
-                "What's a programmer's favorite hangout place?\nFoo Bar! 🍺",
-                "Why did the programmer quit his job?\nBecause he didn't get arrays! 📊"
+                "Why do programmers prefer dark mode?\nBecause light attracts bugs!",
+                "Why did the developer go broke?\nBecause he used up all his cache!",
+                "How many programmers does it take to change a light bulb?\nNone. It's a hardware problem!",
+                "Why do Java developers wear glasses?\nBecause they don't C#!",
+                "What's a programmer's favorite hangout place?\nFoo Bar!",
+                "Why did the programmer quit his job?\nBecause he didn't get arrays!"
             ];
             return jokes[Math.floor(Math.random() * jokes.length)];
         },
@@ -530,12 +530,12 @@ Nice try! But you'll need more than sudo to access my secrets 😏
         },
         fortune: () => {
             const fortunes = [
-                "🔮 A bug-free code awaits you in your future...",
-                "🔮 Your next project will be a great success!",
-                "🔮 Coffee and code will lead you to enlightenment.",
-                "🔮 Stack Overflow has the answer you seek.",
-                "🔮 Your code will compile on the first try... eventually.",
-                "🔮 A merge conflict approaches... be prepared!"
+                "A bug-free code awaits you in your future...",
+                "Your next project will be a great success!",
+                "Coffee and code will lead you to enlightenment.",
+                "Stack Overflow has the answer you seek.",
+                "Your code will compile on the first try... eventually.",
+                "A merge conflict approaches... be prepared!"
             ];
             return fortunes[Math.floor(Math.random() * fortunes.length)];
         },
@@ -555,13 +555,13 @@ Nice try! But you'll need more than sudo to access my secrets 😏
         rickroll: () => {
             window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
             return `
-<span style="color: #22c55e;">Never gonna give you up! 🎵</span>
+<span style="color: #22c55e;">Never gonna give you up!</span>
 <span style="color: #666;">You've been rickrolled! Opening video...</span>
 `;
         },
         secret: () => {
             return `
-<span style="color: #fbbf24;">🎉 You found a secret command!</span>
+<span style="color: #fbbf24;">You found a secret command!</span>
 
 Here's a secret: I built this entire portfolio terminal to showcase
 my skills in a unique way. Pretty cool, right?
