@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ASCII art for name and profession (moo art style)
     const mooArt = `
-      __  __                 _                 
-     |  \\/  | ___  _ __ ___ | |__   ___  _ __  
-     | |\\/| |/ _ \\| '_ \` _ \\| '_ \\ / _ \\| '_ \\ 
+      __  __                 _
+     |  \\/  | ___  _ __ ___ | |__   ___  _ __
+     | |\\/| |/ _ \\| '_ \` _ \\| '_ \\ / _ \\| '_ \\
      | |  | | (_) | | | | | | |_) | (_) | | | |
      |_|  |_|\\___/|_| |_| |_|_.__/ \\___/|_| |_|
-                                              
+
     Shaurya Gaur
     Full Stack Developer, AI/ML Specialist and a Technological Enthusiast
     `;
@@ -32,14 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // New banner art
     const bannerArt = `
-   _____ _                                   
-  / ____| |                                  
- | (___ | |__   __ _ _   _ _ __ _   _  __ _ 
+   _____ _
+  / ____| |
+ | (___ | |__   __ _ _   _ _ __ _   _  __ _
   \\___ \\| '_ \\ / _\` | | | | '__| | | |/ _\` |
   ____) | | | | (_| | |_| | |  | |_| | (_| |
  |_____/|_| |_|\\__,_|\\__,_|_|   \\__, |\\__,_|
-                                 __/ |      
-                                |___/       
+                                 __/ |
+                                |___/
     <span style="color: #22c55e;">Full Stack Developer | AI/ML Specialist | Tech Enthusiast</span>
 `;
 
@@ -54,7 +54,18 @@ document.addEventListener("DOMContentLoaded", () => {
 ╚═══════════════════════════════════════╝
 </span>`;
 
-    const neofetchOutput = `
+    const neofetchAscii = `
+    <span style="color: #22c55e;">        .-.
+       /   \\
+      | o o |
+       \\   /
+        '-'
+     ___|_|___
+    |  LINUX  |
+    |_________|</span>
+`;
+
+    const neofetchInfo = `
 <span style="color: #22c55e;">shaurya@portfolio</span>
 <span style="color: #666;">-----------------</span>
 <span style="color: #22c55e;">OS:</span> Portfolio Linux
@@ -66,6 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
 <span style="color: #22c55e;">Theme:</span> Matrix [Dark]
 <span style="color: #22c55e;">CPU:</span> Coffee-powered
 <span style="color: #22c55e;">Memory:</span> Infinite Ideas
+`;
+
+    const neofetchOutput = `
+<div style="display: flex; gap: 2em; align-items: flex-start;">
+    <div style="white-space: pre; font-family: monospace;">${neofetchAscii}</div>
+    <div style="white-space: pre-line; font-family: monospace;">${neofetchInfo}</div>
+</div>
 `;
 
     const commands = {
@@ -88,9 +106,9 @@ Type <span style="color: #22c55e;">'about'</span> to learn more about me.
 
 Hey there! I'm <span style="color: #22c55e;">Shaurya Gaur</span>, a passionate Full Stack Developer and AI/ML Specialist.
 
-I'm a Computer Science student at Netaji Subash Institute of Technology with a 
-deep love for creating innovative solutions. Whether it's building scalable web 
-applications, training machine learning models, or exploring the latest tech trends, 
+I'm a Computer Science student at Netaji Subash Institute of Technology with a
+deep love for creating innovative solutions. Whether it's building scalable web
+applications, training machine learning models, or exploring the latest tech trends,
 I'm always eager to learn and grow.
 
 <span style="color: #fbbf24;">What drives me?</span>
@@ -173,7 +191,7 @@ Type <span style="color: #22c55e;">'github'</span> to see all my projects!
 <span style="color: #fbbf24;">Tech Innovator</span>
    <span style="color: #666;">Role:</span> Full Stack Developer & AI/ML Specialist
    <span style="color: #666;">Duration:</span> Ongoing
-   
+
    → Built and deployed multiple full-stack applications
    → Developed AI-powered solutions using modern ML frameworks
    → Participated in hackathons and coding competitions
@@ -181,7 +199,7 @@ Type <span style="color: #22c55e;">'github'</span> to see all my projects!
 
 <span style="color: #fbbf24;">Academic Projects</span>
    <span style="color: #666;">Institution:</span> Netaji Subash Institute of Technology
-   
+
    → Lead developer for multiple capstone projects
    → Research in AI/ML applications
    → Teaching assistant for programming courses
@@ -200,7 +218,7 @@ Type <span style="color: #22c55e;">'github'</span> to see all my projects!
 <span style="color: #fbbf24;">Bachelor of Technology - Computer Science</span>
    <span style="color: #666;">Institution:</span> Netaji Subash Institute of Technology
    <span style="color: #666;">Status:</span> Currently Pursuing
-   
+
    <span style="color: #666;">Relevant Coursework:</span>
    → Data Structures & Algorithms
    → Machine Learning & AI
@@ -317,10 +335,11 @@ Or view online sections:
             return 'Are you sure you want to exit? (y/n)';
         },
         help: () => {
-            return `
-<span style="color: #22c55e; font-weight: bold;">Available Commands:</span>
+            return `<span style="color: #22c55e; font-weight: bold;">Available Commands:</span>
 
-<span style="color: #fbbf24;">PORTFOLIO</span>
+<div class="help-columns">
+<div class="help-section">
+<span style="color: #fbbf24; font-weight: bold;">PORTFOLIO</span>
   <span style="color: #22c55e;">home</span>        - Go to the home page
   <span style="color: #22c55e;">welcome</span>     - Show welcome banner
   <span style="color: #22c55e;">about</span>       - Learn about me
@@ -331,14 +350,18 @@ Or view online sections:
   <span style="color: #22c55e;">education</span>   - Academic background
   <span style="color: #22c55e;">contact</span>     - Get in touch with me
   <span style="color: #22c55e;">resume</span>      - View my resume
+</div>
 
-<span style="color: #fbbf24;">SOCIAL</span>
+<div class="help-section">
+<span style="color: #fbbf24; font-weight: bold;">SOCIAL</span>
   <span style="color: #22c55e;">github</span>      - Visit my GitHub
   <span style="color: #22c55e;">linkedin</span>    - Connect on LinkedIn
   <span style="color: #22c55e;">instagram</span>   - Follow on Instagram
   <span style="color: #22c55e;">email</span>       - Send me an email
+</div>
 
-<span style="color: #fbbf24;">SYSTEM</span>
+<div class="help-section">
+<span style="color: #fbbf24; font-weight: bold;">SYSTEM</span>
   <span style="color: #22c55e;">clear</span>       - Clear terminal
   <span style="color: #22c55e;">history</span>     - Command history
   <span style="color: #22c55e;">whoami</span>      - Current user info
@@ -349,8 +372,10 @@ Or view online sections:
   <span style="color: #22c55e;">ls</span>          - List directory contents
   <span style="color: #22c55e;">pwd</span>         - Print working directory
   <span style="color: #22c55e;">cat</span>         - Display file contents
+</div>
 
-<span style="color: #fbbf24;">FUN</span>
+<div class="help-section">
+<span style="color: #fbbf24; font-weight: bold;">FUN</span>
   <span style="color: #22c55e;">matrix</span>      - Enter the Matrix
   <span style="color: #22c55e;">hack</span>        - Hacking simulation
   <span style="color: #22c55e;">coffee</span>      - Make coffee
@@ -361,7 +386,8 @@ Or view online sections:
   <span style="color: #22c55e;">sudo</span>        - Try sudo...
   <span style="color: #22c55e;">rickroll</span>    - Never gonna...
   <span style="color: #22c55e;">secret</span>      - ???
-`;
+</div>
+</div>`;
         },
         ls: (args) => {
             if (args && args.length > 0) {
@@ -464,7 +490,7 @@ Type <span style="color: #22c55e;">'projects'</span> to see what I've built.
         },
         sudo: (args) => {
             return `
-<span style="color: #ef4444;">[sudo] password for shaurya:</span> 
+<span style="color: #ef4444;">[sudo] password for shaurya:</span>
 Nice try! But you'll need more than sudo to access my secrets
 
 <span style="color: #666;">Hint: Try 'help' for actual commands that work!</span>
@@ -556,19 +582,19 @@ Type <span style="color: #22c55e;">'github'</span> to visit.
     // Function to simulate typing effect
     let isTyping = false;
     let stopTyping = false;
-    
+
     async function typeText(html, callback) {
         if (isTyping) return; // Prevent overlapping typing
         isTyping = true;
         stopTyping = false;
-    
+
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = html.replace(/\n/g, '<br>');
         const nodes = Array.from(tempDiv.childNodes);
-    
+
         for (let node of nodes) {
             if (stopTyping) break;
-    
+
             if (node.nodeType === Node.TEXT_NODE) {
                 const text = node.textContent;
                 let span = document.createElement('span');
@@ -580,14 +606,14 @@ Type <span style="color: #22c55e;">'github'</span> to visit.
                 }
                 // Scroll once after finishing typing this text node
                 output.scrollTo({ top: output.scrollHeight, behavior: 'smooth' });
-    
+
             } else {
                 output.appendChild(node.cloneNode(true));
                 // Scroll after appending element node
                 output.scrollTo({ top: output.scrollHeight, behavior: 'smooth' });
             }
         }
-    
+
         isTyping = false;
         if (callback && !stopTyping) callback();
     }
@@ -681,6 +707,11 @@ Type <span style="color: #22c55e;">'github'</span> to visit.
                 input.focus();
                 e.preventDefault();
             }
+        } else if (e.key === "l" && e.ctrlKey) {
+            // Ctrl+L to clear terminal (like in real terminals)
+            e.preventDefault();
+            output.innerHTML = '';
+            input.focus();
         }
     });
 
