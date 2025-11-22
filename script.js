@@ -6,11 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const commandHistory = [];
     let historyIndex = -1;
 
+    // State variables
+    let exitConfirmation = false;
+    let isTyping = false;
+    let stopTyping = false;
+
     // ASCII art for name and profession (moo art style)
     const mooArt = `
-      __  __                 _
-     |  \\/  | ___  _ __ ___ | |__   ___  _ __
-     | |\\/| |/ _ \\| '_ \` _ \\| '_ \\ / _ \\| '_ \\
+      __  __                 _                 
+     |  \\/  | ___  _ __ ___ | |__   ___  _ __  
+     | |\\/| |/ _ \\| '_ \` _ \\| '_ \\ / _ \\| '_ \\ 
      | |  | | (_) | | | | | | |_) | (_) | | | |
      |_|  |_|\\___/|_| |_| |_|_.__/ \\___/|_| |_|
 
@@ -50,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 ║  The Matrix has you...                ║
 ║  Follow the white rabbit.             ║
 ║                                       ║
+║  Knock, knock, Neo.                   ║
 ║  Knock, knock, Neo.                   ║
 ╚═══════════════════════════════════════╝
 </span>`;
@@ -624,7 +630,7 @@ Type <span style="color: #22c55e;">'github'</span> to visit.
             event.preventDefault(); // Prevent default navigation
             window.open(anchor.href, '_blank'); // Open the link in a new tab
         }
-    });
+    };
 
     const processCommand = (input) => {
         if (exitConfirmation) {
@@ -714,6 +720,64 @@ Type <span style="color: #22c55e;">'github'</span> to visit.
             input.focus();
         }
     });
+
+    function typeText(text, callback) {
+        isTyping = true;
+        stopTyping = false;
+
+        const lines = text.split('\n');
+        let lineIndex = 0;
+
+        function processLine() {
+            if (stopTyping) {
+                const remaining = lines.slice(lineIndex).join('\n');
+                output.innerHTML += remaining;
+                window.scrollTo(0, document.body.scrollHeight);
+                isTyping = false;
+                if (callback) callback();
+                return;
+            }
+
+            if (lineIndex < lines.length) {
+                const line = lines[lineIndex];
+                // Check for HTML tags - if present, append line instantly to preserve markup
+                if (line.includes('<')) {
+                    output.innerHTML += line + '\n';
+                    window.scrollTo(0, document.body.scrollHeight);
+                    lineIndex++;
+                    setTimeout(processLine, 20);
+                } else {
+                    // Type plain text char by char
+                    let charIndex = 0;
+                    function typeChar() {
+                        if (stopTyping) {
+                            output.innerHTML += line.substring(charIndex) + '\n';
+                            lineIndex++;
+                            processLine();
+                            return;
+                        }
+
+                        if (charIndex < line.length) {
+                            output.innerHTML += line.charAt(charIndex);
+                            charIndex++;
+                            window.scrollTo(0, document.body.scrollHeight);
+                            setTimeout(typeChar, 10);
+                        } else {
+                            output.innerHTML += '\n';
+                            lineIndex++;
+                            processLine();
+                        }
+                    }
+                    typeChar();
+                }
+            } else {
+                isTyping = false;
+                if (callback) callback();
+            }
+        }
+
+        processLine();
+    }
 
     function openLink(event, url) {
         event.preventDefault();
