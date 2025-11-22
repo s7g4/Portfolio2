@@ -582,12 +582,17 @@ Type <span style="color: #22c55e;">'github'</span> to visit.
         input.focus();
     });
 
-    let exitConfirmation = false;
-    let typingInterval = null;
+    // Mouse barrier effect
+    const cursorBarrier = document.createElement('div');
+    cursorBarrier.classList.add('cursor-barrier');
+    document.body.appendChild(cursorBarrier);
 
-    // Function to simulate typing effect
-    let isTyping = false;
-    let stopTyping = false;
+    document.addEventListener('mousemove', (e) => {
+        cursorBarrier.style.left = e.clientX + 'px';
+        cursorBarrier.style.top = e.clientY + 'px';
+    });
+
+
 
     async function typeText(html, callback) {
         if (isTyping) return; // Prevent overlapping typing
@@ -630,7 +635,7 @@ Type <span style="color: #22c55e;">'github'</span> to visit.
             event.preventDefault(); // Prevent default navigation
             window.open(anchor.href, '_blank'); // Open the link in a new tab
         }
-    };
+    });
 
     const processCommand = (input) => {
         if (exitConfirmation) {

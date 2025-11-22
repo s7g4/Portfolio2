@@ -25,6 +25,12 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#terminal::-webkit-scrollbar {
+    display: none;
 }
 
 #output {
@@ -36,7 +42,6 @@ body {
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
-    /* Removed overflow-x to avoid horizontal scrollbar */
 }
 
 #input-container {
@@ -63,15 +68,12 @@ body {
     min-width: 0;
 }
 
-/* Responsive styles - mobile first approach */
 @media (max-width: 1024px) {
     #terminal {
         width: 90%;
         height: 85%;
-        /* Increased height for better visibility */
         padding: 0.9em;
         max-height: none;
-        /* Remove max-height constraint */
     }
 
     #output {
@@ -87,12 +89,10 @@ body {
     #terminal {
         width: 95%;
         height: 90vh;
-        /* Use viewport height for better mobile scaling */
         padding: 0.8em;
         margin: 1em 0;
     }
 
-    /* Improve text readability on tablets */
     #output,
     #terminal-input {
         font-size: 14px;
@@ -105,16 +105,13 @@ body {
         height: 100vh;
         padding: 0.5em;
         justify-content: flex-start;
-        /* Better mobile layout */
     }
 
     #terminal {
         width: 100%;
         height: 95vh;
-        /* Almost full height on mobile */
         padding: 0.5em;
         border-width: 1px;
-        /* Thinner border on mobile */
         margin: 0;
     }
 
@@ -126,7 +123,6 @@ body {
     #terminal-input {
         font-size: 13px;
         height: 32px;
-        /* Better touch target */
     }
 
     .prompt {
@@ -155,15 +151,12 @@ body {
 @media (hover: none) {
     #terminal {
         -webkit-overflow-scrolling: touch;
-        /* Smooth scrolling on iOS */
     }
 
     #terminal-input {
         padding: 8px 0;
-        /* Larger touch target */
     }
 
-    /* Improve scrollbar visibility on touch devices */
     #output::-webkit-scrollbar {
         width: 6px;
     }
